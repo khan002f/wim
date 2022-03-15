@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+    <servlet>
+    	<servlet-name>test</servlet-name>
+    	<servlet-class>UploadImage</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+    	<servlet-name>test</servlet-name>
+    	<url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    	<servlet-name>table</servlet-name>
+    	<servlet-class>tab_disp.TableDisplay</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+    	<servlet-name>table</servlet-name>
+    	<url-pattern>/table/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+         <servlet-name>jsp</servlet-name>
+         <url-pattern>*.jspx</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+         <welcome-file>index.html</welcome-file>
+         <welcome-file>index.htm</welcome-file>
+         <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet-mapping>
+         <servlet-name>jsp</servlet-name>
+         <url-pattern>*.jsp</url-pattern>
+    </servlet-mapping> 
+	
+<servlet>
+        <servlet-name>php</servlet-name>
+        <servlet-class>net.php.servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>php-formatter</servlet-name>
+        <servlet-class>net.php.formatter</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>php</servlet-name>
+        <url-pattern>*.php</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>php-formatter</servlet-name>
+        <url-pattern>*.phps</url-pattern>
+    </servlet-mapping>
+<!--
+<filter>
+   <filter-name>SessionFilter</filter-name>
+    	<filter-class>
+       		sessions.filter.SessionFilter
+    	</filter-class>
+    <init-param>
+        <param-name>avoid-urls</param-name>
+        <param-value>index.jsp</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>SessionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>	
+
+-->
+   <!--<error-page>    
+    	<error-code>500</error-code>
+    	<location>/500error.html</location>
+   </error-page> -->
+ </web-app>
